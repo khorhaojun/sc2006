@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Contact App - Login</title>
+    <link rel="stylesheet" href="police.css">
+</head>
+<body>
+    <div class="badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Royal_Malaysia_Police.svg/1200px-Royal_Malaysia_Police.svg.png" alt="Police Badge">
+        <span>POLICE CONTACT APP</span>
+    </div>
+    
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Royal_Malaysia_Police.svg/1200px-Royal_Malaysia_Police.svg.png" alt="Police Logo">
+        </div>
+        <h1>Police Contact App Login</h1>
+        
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username / Badge Number</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+            
+            <div class="register-link">
+New officer? <a href="signup.html">Register here</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Here you would typically send the credentials to a server for validation
+            // For demonstration purposes, we'll just show an alert
+            alert(`Login attempt with username: ${username}`);
+            
+            // Simulate successful login and redirect
+            // In a real app, this would only happen after server validation
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

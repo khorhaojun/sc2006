@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)), url('https://images.unsplash.com/photo-1596394723269-b2cbca4e6e38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Police tape effect at top and bottom */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background-image: repeating-linear-gradient(45deg, #f7d417, #f7d417 10px, #111 10px, #111 20px);
+    z-index: 1;
+}
+
+body::before {
+    top: 0;
+}
+
+body::after {
+    bottom: 0;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #1a3a6e;
+    border-top: 5px solid #1a3a6e;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+}
+
+h1 {
+    color: #1a3a6e;
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #1a3a6e;
+    outline: none;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: #1a3a6e;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: #1a3a6e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:hover {
+    background-color: #0f2952;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link a {
+    color: #1a3a6e;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    background: rgba(26, 58, 110, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 2;
+    border-left: 5px solid #f7d417;
+}
+
+.badge img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .badge {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+    
+    .badge img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px 15px;
+        width: 95%;
+    }
+    
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    h1 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .badge {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+    
+    .badge img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+    
+    .badge span {
+        display: none;
+    }
+    
+    input {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .login-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
